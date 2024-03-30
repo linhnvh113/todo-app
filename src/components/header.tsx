@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import iconMoon from '../assets/icon-moon.svg';
 import iconSun from '../assets/icon-sun.svg';
 import { useThemeStore } from '../hooks/use-theme-store';

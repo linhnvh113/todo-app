@@ -1,10 +1,14 @@
 import { useState } from 'react';
 
+import useTodoStore from '../../hooks/use-todo-store';
+
 export default function TodoForm() {
   const [title, setTitle] = useState<string>('');
+  const { add } = useTodoStore();
 
   const onSubmit = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
+    add(title);
     setTitle('');
   };
 
