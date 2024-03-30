@@ -1,5 +1,6 @@
 import iconCross from '../../assets/icon-cross.svg';
 import useTodoStore, { Todo } from '../../hooks/use-todo-store';
+import { Checkbox } from '../checkbox';
 
 interface Props {
   todo: Todo;
@@ -11,11 +12,10 @@ export default function TodoItem({ todo }: Props) {
 
   return (
     <div className="border-border bg-card flex select-none items-center gap-3 border-b px-5 py-4 first:rounded-t-md md:gap-6 md:px-6 md:py-5">
-      <input
+      <Checkbox
         id={id}
-        type="checkbox"
-        defaultChecked={status === 'completed'}
-        onChange={() => update(id)}
+        checked={status === 'completed'}
+        onCheckedChange={() => update(id)}
       />
       <label
         htmlFor={id}
